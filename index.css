@@ -1,0 +1,9 @@
+.limited-height {
+  max-height: 768px;
+
+  min-width: auto;
+}
+.light-blue-text {
+  color: lightblue;
+  border-color: white;
+}
