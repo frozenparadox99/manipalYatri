@@ -1,22 +1,40 @@
-.App {
-  text-align: center;
+@media screen and (min-width:768px){
+  .sub1 {
+    width:40vw;
+    height:80vh;
+    position: fixed;
+    left:3vw;
+    top:100px;
 }
-
-.App-logo {
-  height: 40vmin;
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.sub2 {
+  margin-left: 55vw;
+  width:30vw;
+  position:absolute;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  flex-flow: column wrap;
+}
 }
 
-.App-link {
-  color: #09d3ac;
+@media screen and (max-width:767px) {
+  #application{
+      display: flex;
+      flex-flow: column nowrap;
+      width:460px;
+      height: auto;
+      justify-content: flex-start;
+      align-content: center;
+      margin: 0 auto;
+  }
+  .sub1 {
+      height:auto;
+  }
+}
+
+.sub1 h1{
+  font-family: 'Courier New', Courier, monospace;
+  margin-top: 0;
+}
+
+.sub2 {
+  margin-top: 2rem;
 }
