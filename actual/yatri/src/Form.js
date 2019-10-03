@@ -19,6 +19,7 @@ class Form extends Component {
         const returner1 = this.state.source?<Spinner size={Icon.SIZE_STANDARD} /> : undefined;
         const returner2 = this.state.dest?<Spinner size={Icon.SIZE_STANDARD} /> : undefined;
         return (
+            <div className="sub1">
             <Callout icon="help" intent="success" style={{borderRadius:'10px' ,padding:"2rem",backgroundColor: '#c3ffb3'}}>
             <h1>Where would you like to go today?</h1>
                 <InputGroup
@@ -47,6 +48,7 @@ class Form extends Component {
                 />
                 <Button icon="confirm" intent="danger" style={{margin:'0.5rem 40%'}}>Search</Button>
             </Callout>
+            </div>
         )
     }
 }

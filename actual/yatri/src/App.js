@@ -1,32 +1,20 @@
 import React,{Component} from 'react';
 import "@blueprintjs/core/lib/css/blueprint.css";
 import './App.css';
-import Form from './Form';
-import List from './List';
-import { Navbar, NavbarHeading, NavbarGroup,Icon,Button,Classes,NavbarDivider, Alignment } from '@blueprintjs/core';
-
+import Main from './Main';
+import Navigation from './Navigation';
+import Page from './Page';
+import {Switch,Route} from 'react-router-dom'; 
 
 class App extends Component {
   render() {
   return (
     <div id="application">
-      <Navbar style={{backgroundColor: '#7a3506'}} fixedToTop={true}>
-        <NavbarGroup align="left">
-          <Icon icon="briefcase" color="white" iconSize="20px" style={{margin:'0 12px'}}/>
-          <NavbarHeading style={{color: 'white'}}><h2>Yatri</h2></NavbarHeading>
-          <NavbarDivider />
-          <NavbarGroup align={Alignment.RIGHT}>
-            <Button intent="secondary" style={{color: 'white'}} className={Classes.MINIMAL} icon="home" text="Home" />
-            <Button intent="secondary" style={{color: 'white'}} className={Classes.MINIMAL} icon="document" text="Files" />
-          </NavbarGroup>
-        </NavbarGroup>
-      </Navbar>
-      <div style={{padding: '3rem'}}>
-      <div className="sub1">
-          <Form />
-      </div>
-      <List />
-      </div>
+      <Navigation />
+      <Switch>
+        <Route exact path="/" component={Main}/>
+        <Route exact path="/flight/:name" render={(rpr) => <Page />} />
+      </Switch>
     </div>
   );
   }
